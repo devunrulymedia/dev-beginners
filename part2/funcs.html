@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Curriculum — part 2</title>
+  <link rel=stylesheet href="http://fonts.googleapis.com/css?family=Averia+Serif+Libre:300,400">
+  <link rel=stylesheet href=/style.css>
+  <meta http-equiv=Content-Type content="text/html; charset=utf-8">
+</head>
+
+<body>
+<h1>Curriculum: page 2, pictures</h1>
+
+<p>Part 1 told you exactly, literally what to do, without
+leaving you any choices. We apologize for this shameless suppression
+of your artistic self. Now that you know the basics, the course
+material will be less linear, with more room for experimentation.</p>
+
+<h2 class=step>Functions</h2>
+
+<h3 class=goal>Goal</h3>
+
+<p>Now consider that we want to draw a smiley in multiple, specific
+places. We could repeat the six statements needed to draw one such
+shape several times, but again, what we're trying to do here is to
+make the computer <strong>work</strong> for us.</p>
+
+<p>We are about to learn how to define new functions to perform useful
+operations for us.</p>
+
+<h3 class=inst>Instructions</h3>
+
+<p>This is the <code>smiley</code> function:</p>
+
+<pre>function smiley(x, y) {
+  moveTo(x, y);
+  color("yellow");
+  circle(0, 0, 50);
+  color("black");
+  circle(-20, 10, 7);
+  circle(20, 10, 7);
+  lineWidth(3);
+  path("g -20 -10 q 20 -10 0 -50 c");
+  goBack();
+}</pre>
+
+<p>You can put it in your code next to the <code>drawing</code>
+function, and change that function to call it,
+as <a href="/sandbox/#drawing_function.js" target=_blank>shown
+here</a>:</p>
+
+<pre>function drawing() {
+  smiley(0, 0);
+  smiley(-100, 20);
+  smiley(100, 50);
+}</pre>
+
+<h3 class=ex>Explanation</h3>
+
+<p>A function is, in effect, a shorthand for a piece of code. You
+define it with the <code>function</code> word as shown above. This
+produces a variable with the given name (<code>smiley</code>, in this
+case) that refers to the chunk of code. The words after the function's
+name—<code>(x, y)</code>—are the <em>parameters</em> to the function.
+These are given a value when the function is used. For
+example <code>smiley(0, 0)</code> will run the function's body with
+both <code>x</code> and <code>y</code> holding the value zero.</p>
+
+<p>One thing to be aware of is that variables defined inside functions
+(including their parameters), are <em>local</em> to that function. So
+if you have another function that also has a parameter
+called <code>x</code>, such as <code>circle</code>, that
+function's <code>x</code> and the one in <code>smiley</code> are
+separate variables, and do not interfere with each other. Mentions
+of <code>x</code> in <code>smiley</code> refer to that
+function's <code>x</code>, and mentions in other functions refer to
+whichever variable happens to be called <code>x</code> in that
+function.</p>
+
+<p><strong>Exercise:</strong> define a
+function <code>smileySquadron</code>, which, given <code>x</code>
+and <code>y</code> parameters, draws five or so smileys next to each
+other by using a <code>while</code> loop. Once it works, use it to
+draw a whole lot of smileys.</p>
+
+<p><a href="freeform.html">→ Onwards!</a></p>
+
+</body>
+</html>
+

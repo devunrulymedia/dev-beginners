@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Curriculum — part 3</title>
+  <link rel=stylesheet href="http://fonts.googleapis.com/css?family=Averia+Serif+Libre:300,400">
+  <link rel=stylesheet href=/style.css>
+  <meta http-equiv=Content-Type content="text/html; charset=utf-8">
+</head>
+
+<body>
+
+<h1>Curriculum: part 3, data</h1>
+
+<p>Inside the computer's world, there is only data. That which is not
+data, does not exist. Programs are data. Programs create new data.
+It's like some kind of strange, silicon-based cycle of life.</p>
+
+
+<h2 class=step>We've got data</h2>
+
+<h3 class=goal>Goal</h3>
+
+<p>Perform a simple visualization of a dataset.</p>
+
+<h3 class=inst>Instructions</h3>
+
+<p>In our new playground environment, we have a new variable
+available, <code>countryData</code>. This contains an array of objects
+with information (population, life expectancy) about almost all
+countries on earth.</p>
+
+<p>Each object (representing a country), has a <code>name</code>
+property containing a string, and <code>population</code>
+and <code>life_expectancy</code> properties that hold arrays of
+numbers, representing the data points for these statistics from the
+year 1960 to 2011.</p>
+
+<p>This program picks a few countries, and plots the trend of their
+life expectancy in this period as series of dots.</p>
+
+<pre>var width = 600, height = 300;
+
+function showCountry(country) {
+  var step = width / country.life_expectancy.length;
+  for (var pos = 0; pos < country.life_expectancy.length; pos = pos + 1) {
+    var le = country.life_expectancy[pos];
+    circle(step * pos, le * height / 100, 2);
+  }
+}
+
+function drawing() {
+  moveTo(-width / 2, -height / 2);
+  color("red");
+  showCountry(countryData[66]); // Germany
+  color("green");
+  showCountry(countryData[81]); // India
+  color("blue");
+  showCountry(countryData[150]); // Russian Federation
+}</pre>
+
+<p>You can see it in action <a href="/sandbox/#life_expectancy.js"
+target=_blank>here</a>.</p>
+
+<h3 class=ex>Explanation</h3>
+
+<p>In order to be a little disciplined about where we're going to
+draw, the program starts by defining the width and the height of the
+area it wants to draw in. 600 by 300 units.</p>
+
+<p>The <code>showCountry</code> function takes a country object as its
+parameter, and runs a loop over all the life expectancy data points
+for that country. It computes the horizontal distance it wants to
+leave between dots in the <code>step</code> variable, and, on the
+assumption that life expectancy is in the zero to hundred range,
+divides the height by 100 to determine the vertical space that
+signifies one year of life expectancy.</p>
+
+<p>The <code>drawing</code> function first moves the coordinate system
+so that 0,0 is the bottom left corner of our graph, and then
+calls <code>showCountry</code> on three different countries, giving
+each one a different color.</p>
+
+<p><strong>Exercise:</strong> Having to know a country's position in
+the dataset in order to display it is rather silly. Write a
+function <code>findCountry</code> that takes a country name as its
+only parameter, loops over the <code>countryData</code> array, and
+gives back the object for the named country.</p>
+
+<p>In order to do this, you need to know that <code>return</code>
+statements can be used in functions to give back a value to the code
+that called the function. For example:</p>
+
+<pre>function timesThree(x) {
+  return x * 3;
+}
+console.log(timesThree(3)); // Logs 9</pre>
+
+<p><strong>Exercise:</strong> A big problem with our graphs is that
+you have no idea what the dots actually mean. Add code that draws gray
+horizontal lines (using the <code>line(x1, y1, x2, y2)</code>
+function) at ten-year intervals behind the graph. I.e. there is one
+line for zero, one for ten, and so on up to one hundred. Use
+the <code>width</code> and <code>height</code> variables to place the
+lines properly.</p>
+
+<p>If you're feeling motivated, you can also add textual labels (using
+the <code>text(x, y, string)</code> function) and/or a horizontal
+scale for the years.</p>
+
+<p><strong>Exercise:</strong> Change the <code>showCountry</code>
+function to draw a solid line instead of a series of dots.</p>
+
+<p><a href="transform.html">→ Onwards! </a></p>
+
+</body>
+</html>
+

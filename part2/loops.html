@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+<head>
+  <title>Curriculum — part 2</title>
+  <link rel=stylesheet href="http://fonts.googleapis.com/css?family=Averia+Serif+Libre:300,400">
+  <link rel=stylesheet href=/style.css>
+  <meta http-equiv=Content-Type content="text/html; charset=utf-8">
+</head>
+
+<body>
+
+<h1>Curriculum: part 2, pictures</h1>
+
+<p>Part 1 told you exactly, literally what to do, without
+leaving you any choices. We apologize for this shameless suppression
+of your artistic self. Now that you know the basics, the course
+material will be less linear, with more room for experimentation.</p>
+
+<h2 class=step>The loop</h2>
+
+<h3 class=goal>Goal</h3>
+
+<p>Learn what a loop is, and how to express them in JavaScript.</p>
+
+<p>Problem statement: we want to draw twenty dots, without
+writing <code>circle(x, y, something)</code> twenty times.</p>
+
+<h3 class=inst>Instructions</h3>
+
+<p>Open <a href="/sandbox/#drawing_loop.js" target=_blank>this link</a>
+to get a <code>drawing</code> function containing this program:</p>
+
+<pre>color("red");
+var count = 0;
+while (count < 20) {
+  circle(count * 10, 0, 4);
+  count = count + 1;
+}</pre>
+
+<h3 class=ex>Explanation</h3>
+
+<p>A program, when not otherwise instructed, will simply execute its
+statements from top to bottom. The great thing about making a computer
+work for us is that it can take repetetive tasks of our hand. Thus, we
+don't want to write <code>circle(0, 0, 4); circle(10, 0, 4);</code> etc
+to draw our dots.</p>
+
+<p>The word <code>while</code> can be used to create a special kind of
+statement that is called a <em>loop</em>. It consists of
+a <em>condition</em> (<code>count &lt; 20</code>) and a <em>body</em>
+(the part between the braces). A loop does not obey the usual top-down
+order of execution. It will continue executing the body as long as the
+condition holds true.</p>
+
+<p>The braces around the two statements inside the loop are used to
+group them together—they make clear that these statements both belong
+to the loop body. You have probably noticed that some space is added
+in front of these, to make it clear that they are part of a block.
+This is done to help readability of the program, but isn't
+strictly required.</p>
+
+<p>The example code uses a variable to track its progress.
+The <code>count</code> variable starts at zero, and is moved forward
+by one every time the loop body executes. A loop condition is a
+normal expression, and the <code>&lt;</code> symbol is a normal
+operator that compares two expressions and returns a value that
+indicates whether the one to the left is smaller than the one to the
+right. Thus, we can expect the loop body to be executed exactly twenty
+times—first with <code>count</code> at zero, then at one, and so on
+until nineteen. When it reaches twenty, the condition no longer holds,
+and the program continues below the loop (which is the end of our
+example).</p>
+
+<p>There are a few more things you might need to know about
+the <code>&lt;</code> operator. The value it produces is not a number
+or a string, but a new type, called <em>boolean</em>. There are only
+two values of this type, called <code>true</code>
+and <code>false</code>. There are similar operators for checking
+whether a value is greater than (<code>></code>) or equal to
+(<code>==</code>) to some other value.</p>
+
+<p><strong>Exercise:</strong> try to write a program that prints a
+20-by-20 <em>grid</em> of dots, instead of just a line. You'll need
+two loops, and two counter variables. Hint: you may put a loop inside
+another loop.</p>
+
+<p>When trying out programs in the sandbox, keep an eye on the
+console. When the computer can't make sense of your program, it will
+output (more or less informative) messages there. When nothing happens
+after pressing 'Render', chances are you mistyped something.</p>
+
+<p><a href="conditionals.html">→ Onwards!</a></p>
+
+</body>
+</html>

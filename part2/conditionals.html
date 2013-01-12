@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Curriculum — part 2</title>
+  <link rel=stylesheet href="http://fonts.googleapis.com/css?family=Averia+Serif+Libre:300,400">
+  <link rel=stylesheet href=/style.css>
+  <meta http-equiv=Content-Type content="text/html; charset=utf-8">
+</head>
+
+<body>
+
+<h1>Curriculum: page 2, pictures</h1>
+
+<p>Part 1 told you exactly, literally what to do, without
+leaving you any choices. We apologize for this shameless suppression
+of your artistic self. Now that you know the basics, the course
+material will be less linear, with more room for experimentation.</p>
+
+<h2 class=step>Conditional execution</h2>
+
+<h3 class=goal>Goal</h3>
+
+<p>Next, we want to draw every other dot in our lines of dots in a
+different color. The even ones should be black, the odd ones grey.</p>
+
+<p>In order to do this, we will learn about conditional statements.</p>
+
+<h3 class=inst>Instructions</h3>
+
+<p>Here is the program that, when put inside the <code>drawing</code>
+function, does what we want, and is
+available <a href="/sandbox/#drawing_if.js" target=_blank>here</a>:</p>
+
+<pre>var count = 0;
+while (count < 20) {
+  if (count % 2 == 0) {
+    color("black");
+  } else {
+    color("gray");
+  }
+  circle(count * 10, 0, 4);
+  count = count + 1;
+}</pre>
+
+<h3 class=ex>Explanation</h3>
+
+<p>The first new concept introduced here is the <code>%</code>
+operator. This is pronounced 'remainder'. It is not a very important
+operator, but it is useful here. What it does is divide the value on
+the left by the one on the right, and give us the remainder of that
+division. Thus, <code>count % 2 == 0</code> is a way to check
+whether <code>count</code> is even—if it is, then the remainder of
+dividing it by two will be zero.</p>
+
+<p>But the <em>important</em> new concept introduced here is
+the <code>if</code>/<code>else</code> statement. Like a loop, it
+accepts a condition. If the condition is <code>true</code>, it will
+execute the statement coming after it. Otherwise, it will execute the
+statement that follows the <code>else</code> word.</p>
+
+<p>The <code>else</code> part can be left off to indicate that nothing
+at all should happen when the condition does not hold.</p>
+
+<p><strong>Exercise:</strong> extend the example program to draw every
+third dot 10 units higher than the others. Hint: define a
+variable <code>height</code> and set its value inside of a
+conditional.</p>
+
+<p><a href="funcs.html">→ Onwards!</a></p>
+
+</body>
+</html>

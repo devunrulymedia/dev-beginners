@@ -12,7 +12,7 @@ To Get Started Helping:
 Stuff To Change In This Version:
 - [x] remove the Deutsch bits, as we can't maintain them and it'll get out of sync
 
-- [ ] remove references to days because ours will be ongoing
+- [x] remove references to days because ours will be ongoing
 
 - [ ] move sections into separate pages 
 

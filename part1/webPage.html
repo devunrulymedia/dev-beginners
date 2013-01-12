@@ -1,0 +1,78 @@
+<!doctype html>
+
+<head>
+  <title>Curriculum — part 1</title>
+  <link rel=stylesheet href="http://fonts.googleapis.com/css?family=Averia+Serif+Libre:300,400">
+  <link rel=stylesheet href=../style.css>
+  <meta http-equiv=Content-Type content="text/html; charset=utf-8">
+</head>
+
+<body>
+<h1>Curriculum: part 1, the basics</h1>
+
+<h2 class=step>A web page</h2>
+
+<h3 class=goal>Goal</h3>
+
+<p>See how JavaScript programs operate in the context of web
+pages.</p>
+
+<h3 class=inst>Instructions</h3>
+
+<p>Open the <a href="/sandbox/#basic.html" target="_blank">example</a>
+page.</p>
+
+<p>You will see the source for a very simple HTML page below, with the
+actual page shown above it. Read the source.</p>
+
+<p>Try changing something, and clicking the 'Render' button above the
+source code. Open the JavaScript console in the new tab.</p>
+
+<h3 class=ex>Explanation</h3>
+
+<p>What the sandbox page (which is itself a web page written in
+JavaScript) allows us to do is to write and try out web pages.<p>
+
+<p>Pieces of JavaScript can be embedded in HTML documents with
+the <code>&lt;script></code> tag. In this case, there is a tiny
+program embedded that just defines a variable
+called <code>myMessage</code> and calls the <code>console.log</code>
+function on it.</p>
+
+<p>When entering expressions directly into the console, the result
+will be displayed automatically. This does not happen for programs
+running as part of a web page. When you want to explicitly show
+something in the console, use the <code>console.log</code>
+function.</p>
+
+<p>If you want to inspect the environment of a page shown in the
+sandbox, you have to take an extra step. If you open a console on that
+tab, and you type <code>myMessage</code> into it, it won't find that
+variable. This is because the console is connected to the sandbox page
+itself, not the page shown inside of it. At the bottom of the console,
+there is a control that says <code>&lt;top frame></code>. Click on
+this and select the other option to connect the console to the actual
+page we wrote.</p>
+
+<p>The button in the example page has a snippet of JavaScript
+associated with it through an <code>onclick</code> attribute.
+Attributes are <code>name="value"</code> pairs that are specified in
+HTML tags. Because the button and the <code>myMessage</code> variable
+live on the same page, the <code>onclick</code> program
+(<code>alert(myMessage);</code>) can refer to it.
+The <code>myvalue</code> variable we defined earlier (on this tab)
+is <em>not</em> available on the other tab. Each page is its own
+little world, with its own set of variables.</p>
+
+<h2>And now</h2>
+
+<p>You've finished the first part - awesome! Things are about to get a lot more interactive.</p>
+
+<p><a href="/part2/picturePlayground.html">→ Onwards! </a></p>
+
+</body>
+
+</html>
+
+
+
