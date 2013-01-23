@@ -1,0 +1,106 @@
+<html>
+	<head>
+		<link rel='stylesheet' type='text/css' href='https://docs.google.com/static/spreadsheets/client/css/779923916-published_form_compiled.css'>
+		<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js'></script>
+		<script src='lib/handlebars.js'></script>
+		<script src='loadFeedback.js'></script>
+		<title></title>
+	</head>
+	<body>
+		<div class='ss-form-container'>
+			<div class='ss-form-heading'>
+				<h1 class='ss-form-title'>
+					Code Club Feedback
+				</h1>
+				<div class='ss-form-desc ss-no-ignore-whitespace'>Any info. you might have so we can keep improving code club and making it more useful for you guys :) If you're stuck, ask in class, ask each other, or mail us at <a href='mailto:vikki@unrulymedia.com'>vikki@unrulymedia.com</a>
+				</div>
+				<hr class='ss-email-break' style='display:none;'>
+			</div>
+			<div class='ss-form'>
+				<form action='https://docs.google.com/spreadsheet/formResponse?formkey=dDlQMVpNV1kxT2JfYWxBLW5aYVgyNGc6MQ&amp;ifq' method='post' id='ss-form'>
+					<div class='errorbox-good'>
+						<div class='ss-item ss-radio'>
+							<div class='ss-form-entry'>
+								<label class='ss-q-title' for='entry_9'>How's the pace of the class?</label>
+								<ul class='ss-choices'>
+									<li class='ss-choice-item'>
+										<label class='ss-choice-label'><input type='radio' name='entry.9.group' value='Too slow' class='ss-q-radio' id='group_9_1'> Too slow</label>
+									</li>
+									<li class='ss-choice-item'>
+										<label class='ss-choice-label'><input type='radio' name='entry.9.group' value='About right' class='ss-q-radio' id='group_9_2'> About right</label>
+									</li>
+									<li class='ss-choice-item'>
+										<label class='ss-choice-label'><input type='radio' name='entry.9.group' value='Too fast' class='ss-q-radio' id='group_9_3'> Too fast</label>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class='errorbox-good'>
+						<div class='ss-item ss-paragraph-text'>
+							<div class='ss-form-entry'>
+								<label class='ss-q-title' for='entry_4'>Are there any topics you'd like us to cover that we haven't so far?</label> 
+								<textarea name='entry.4.single' rows='3' cols='75' class='ss-q-long' id='entry_4'>
+</textarea>
+							</div>
+						</div>
+					</div>
+					<div class='errorbox-good'>
+						<div class='ss-item ss-paragraph-text'>
+							<div class='ss-form-entry'>
+								<label class='ss-q-title' for='entry_5'>Is there anything that you found especially difficult about the material, that we could go over in more detail?</label> 
+								<textarea name='entry.5.single' rows='3' cols='75' class='ss-q-long' id='entry_5'>
+</textarea>
+							</div>
+						</div>
+					</div>
+					<div class='errorbox-good'>
+						<div class='ss-item ss-paragraph-text'>
+							<div class='ss-form-entry'>
+								<label class='ss-q-title' for='entry_10'>Is there anything we can do to make Code Club more fun, useful, interesting?</label> 
+								<textarea name='entry.10.single' rows='3' cols='75' class='ss-q-long' id='entry_10'>
+</textarea>
+							</div>
+						</div>
+					</div>
+					<div class='errorbox-good'>
+						<div class='ss-item ss-paragraph-text'>
+							<div class='ss-form-entry'>
+								<label class='ss-q-title' for='entry_7'>Any other feedback</label> 
+								<textarea name='entry.7.single' rows='3' cols='75' class='ss-q-long' id='entry_7'>
+</textarea>
+							</div>
+						</div>
+					</div><input type='hidden' name='pageNumber' value='0'> <input type='hidden' name='backupCache' value=''>
+					<div class='ss-item ss-navigate'>
+						<div class='ss-form-entry'>
+							<input type='submit' name='submit' value='Submit'>
+						</div>
+					</div>
+				</form><script type='text/javascript'>
+
+				(function() {
+				var divs = document.getElementById('ss-form').
+				getElementsByTagName('div');
+				var numDivs = divs.length;
+				for (var j = 0; j < numDivs; j++) {
+				if (divs[j].className == 'errorbox-bad') {
+				divs[j].lastChild.firstChild.lastChild.focus();
+				return;
+				}
+				}
+				for (var i = 0; i < numDivs; i++) {
+				var div = divs[i];
+				if (div.className == 'ss-form-entry' &&
+				div.firstChild &&
+				div.firstChild.className == 'ss-q-title') {
+				div.lastChild.focus();
+				return;
+				}
+				}
+				})();
+				</script>
+			</div>
+		</div>
+	</body>
+</html>
