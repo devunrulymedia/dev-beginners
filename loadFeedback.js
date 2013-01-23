@@ -12,4 +12,4 @@
 	                $('body').append(tpl);
 	            }               
 	        });         
-	    })('/templates/feedback_form.handlebars');
+	    })('/dev-beginners/templates/feedback_form.handlebars');
