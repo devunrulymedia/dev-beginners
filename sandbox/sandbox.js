@@ -1,5 +1,6 @@
 var mode = "javascript", wrap = null;
 var frame, editorDiv, frameDiv, editor;
+var target = new EventTarget();
 
 var editorSize = 50;
 if (window.localStorage && localStorage.hasOwnProperty("editorSize"))
@@ -38,7 +39,7 @@ window.onload = function() {
     lineNumbers: true,
     lineWrapping: true,
     mode: "null",
-    matchBrackets: true,
+    matchBrackets: true
   });
   window.addEventListener("resize", resize, false);
   document.getElementById("controls").addEventListener("mousedown", maybeStartResize, false);
@@ -164,6 +165,8 @@ function render() {
       doc.write(editor.getValue());
     }
     doc.close();
+
+    target.fire('canvasRendered', {id: 'mycanvas', frame: frame});
   }, 50);
 }
 
