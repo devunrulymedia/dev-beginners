@@ -1,22 +1,39 @@
-function saveImg() {
-   var canvas = window.frames[0].document.getElementById('mycanvas');
-   var imgData = canvas.toDataURL();
-   return imgData;
+function saveCanvasData(canvasId, frame) {
+  var frame  = frame || window,
+      canvas = frame.document.getElementById(canvasId);
+  return canvas ? canvas.toDataURL() : undefined;
 }
 
-function addSaveCanvasLink() {
-  var imageLink = $('.saveCanvasLink');
+function addSaveCanvasLink(canvasId, frame) {
+  var imageLink,
+      imageData;
+
+  imageLink = $('.saveCanvasLink');
   if (imageLink.length < 1) {
     imageLink = $('<a>');
     imageLink.addClass('saveCanvasLink');
     imageLink.text('Link to Image');
     imageLink.attr('target', '_blank');
-    $('#output').append(imageLink);
+    $('#save-load').prepend(imageLink);
   }
 
-  imageLink.attr('href', saveImg());
+  imageData = saveCanvasData(canvasId, frame);
+
+  if (imageData) {
+    imageLink.show();
+    imageLink.attr('href', imageData);
+  } else {
+    imageLink.hide();
+  }
+  
 }
 
 if (target) {
-  target.addListener('canvasRendered', function(){ setTimeout(addSaveCanvasLink, 100);});
+  // timeout is essentially hack to make sure that canvas has really rendered
+  // we only know on canvasRendered that render has been called and our script written out :(
+
+  target.addListener('canvasRendered', function(e){ 
+    var addSaveMyCanvasLink = addSaveCanvasLink.bind(null, e.canvasId, e.frame);
+    setTimeout(addSaveMyCanvasLink, 100);
+  });
 }
