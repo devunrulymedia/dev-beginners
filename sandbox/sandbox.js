@@ -166,7 +166,7 @@ function render() {
     }
     doc.close();
 
-    target.fire({type: 'canvasRendered', canvasId: 'mycanvas', frame: frame.content});
+    target.fire({type: 'canvasRendered', canvasId: 'mycanvas', frame: frame.contentWindow});
   }, 50);
 }
 
